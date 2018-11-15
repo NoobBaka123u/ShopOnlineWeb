@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import beans.User;
+
 public class ApplicationDao {
 
 	public boolean checkLogin(String username,String password)
@@ -29,5 +31,9 @@ public class ApplicationDao {
 		}
 		return check;
 		
+	}
+	public int registerUser(User user)
+	{
+		return 0;
 	}
 }
