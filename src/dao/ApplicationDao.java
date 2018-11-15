@@ -34,6 +34,6 @@ public class ApplicationDao {
 	}
 	public int registerUser(User user)
 	{
-		return 1;
+		return 0;
 	}
 }
