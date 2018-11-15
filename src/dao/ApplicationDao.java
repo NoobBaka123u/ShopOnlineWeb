@@ -32,8 +32,32 @@ public class ApplicationDao {
 		return check;
 		
 	}
-	public int registerUser(User user)
+	public boolean registerUser(User user)
 	{
-		return 1;
+		int rowsAffected = 0;
+
+		try {
+			// get the connection for the database
+			Connection connection = DBConnection.getDatabaseConnection();
+
+			// write the insert query
+			String insertQuery = "insert into users values(?,?,?,?,?)";
+
+			// set parameters with PreparedStatement
+			java.sql.PreparedStatement statement = connection.prepareStatement(insertQuery);
+			statement.setString(1, user.getUsername());
+			statement.setString(2, user.getPassword());
+			statement.setString(3, user.getFirstName());
+			statement.setString(4, user.getLastName());
+			statement.setString(5, user.getEmail());
+
+			// execute the statement
+			rowsAffected = statement.executeUpdate();
+
+		} catch (SQLException exception) {
+			exception.printStackTrace();
+		}
+		if(rowsAffected==0)return false;
+		else return true;
 	}
 }

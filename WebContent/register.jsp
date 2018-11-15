@@ -8,12 +8,14 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	
+	<%if(request.getAttribute("message")!=null) %>
 	<div class="container">
 		<div class="account">
 			<h2 class="account-in">Register</h2>
+			<%=request.getAttribute("message") %>
 				<form action="register" method="post">
 				<div>
+				
 					<span>First Name*</span>
 					<input type="text" name="firstName">
 				</div> 	
