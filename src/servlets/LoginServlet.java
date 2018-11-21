@@ -15,8 +15,7 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		req.getRequestDispatcher("/login.jsp").forward(req, resp);
 	}
 
 	@Override
@@ -25,8 +24,9 @@ public class LoginServlet extends HttpServlet {
 		String password = req.getParameter("password");
 		ApplicationDao dao = new ApplicationDao();
 		boolean check=dao.checkLogin(username, password);
-		if(check)System.out.println("dung");
-		else System.out.println("sai tai khoan hoac mat khau");
+		
+		if(check)req.getRequestDispatcher("/index.jsp").forward(req, resp);
+		else req.getRequestDispatcher("/login.jsp").forward(req, resp);
 	}
 
 	

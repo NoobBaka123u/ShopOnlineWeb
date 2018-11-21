@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
 							<li  ><a href="wishlist.html">WISH LIST (0)</a> </li>
-							<li  ><a href="login.jsp">  MY ACCOUNT</a></li>
+							<li  ><a href="login">  MY ACCOUNT</a></li>
 							<li ><a href="#" > SHOPPING CART</a></li>
 							<li > <a href="checkout.html" >CHECKOUT</a> </li>	
 							<li><div class="cart">
