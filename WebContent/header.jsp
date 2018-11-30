@@ -1,3 +1,5 @@
+<%@page import="model.Category"%>
+<%@page import="dao.CategoryDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -53,6 +55,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 </head>
 <body>
+
+	<%
+		CategoryDAO categoryDAO = new CategoryDAO();	
+	%>
+
 <!--header-->
 	<div class="header">
 		<div class="header-top">
@@ -64,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
 							<li  ><a href="wishlist.html">WISH LIST (0)</a> </li>
-							<li  ><a href="login.jsp">  MY ACCOUNT</a></li>
+							<li  ><a href="login">  MY ACCOUNT</a></li>
 							<li ><a href="#" > SHOPPING CART</a></li>
 							<li > <a href="checkout.html" >CHECKOUT</a> </li>	
 							<li><div class="cart">
@@ -119,13 +126,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li class="active"><a href="index.jsp"><i> </i>Home</a></li>
 					<li ><a href="#" >Famous brands</a>
 						<ul class="drop">
-							<li><a href="products.html">Nike(52)</a></li>
-							<li><a href="products.html">Adidas(44)</a></li>
-							<li><a href="products.html">Vans(17)</a></li>
-							<li><a href="products.html">Converse(5)</a></li>
-							<li><a href="products.html">Reebok(8)</a></li>
-							<li><a href="products.html">Balenciaga(5)</a></li>
+						<%
+							for(Category c: categoryDAO.getListCategory()){
+						%>
+							<li><a href="product.jsp?category=<%=c.getCategoryID()%>"><%=c.getCategoryName()%></a></li>
+						<%
+							}
+						%>	
 						</ul>
+							
 						</li> 						
 						<li><a href="products.html" >  Hot Trend </a></li>            
 						<li><a href="products.html" >Bestseller</a></li>						  				 
