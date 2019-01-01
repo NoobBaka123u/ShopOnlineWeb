@@ -98,7 +98,7 @@
                                 <div class="top-content">
                                     <h5><a href="single.jsp?productID=<%=p.getProductID()%>"><%=p.getProductName()%></a></h5>
                                     <div class="white">
-                                        <a href="single.jsp?productID=<%=p.getProductID()%>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+                                        <a href="CartServlet?command=plus&productID=<%=p.getProductID()%>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
                                         <p class="dollar"><span class="in-dollar">$</span><span><%=p.getProductPrice()%></span></p>
                                         <div class="clearfix"></div>
                                     </div>
@@ -106,10 +106,11 @@
                                 </div>							
                             </div>
                         </div>
-                                        
+
                         <%
                             }
                         %>
+
 
 
                         <div class="clearfix"></div>

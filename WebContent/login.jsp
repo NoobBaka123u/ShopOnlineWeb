@@ -29,6 +29,7 @@
                         </div>			
                         <input type="hidden" value="login" name="command">
                         <input type="submit" value="Login"> 
+                        <a href="register.jsp"> Creat new account </a>
                     </form>
                 </div>
             </div>
