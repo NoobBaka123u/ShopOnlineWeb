@@ -2,33 +2,39 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>login</title>
-</head>
-<body>
-	<jsp:include page="header.jsp"></jsp:include>
-	
-	<div class="container">
-		<div class="account">
-			<h2 class="account-in">Account</h2>
-				<form action="login" method="post">
-				<div>
-					<span>Username</span>
-					<input type="text" name="username">
-				</div> 	
-				
-				<div> 
-					<span class="word">Password</span>
-					<input type="password" name="password">
-				</div>				
-					<input type="submit" value="Login"> 
-					
-				</form>
-				<a href="register">Create new account</a>
-		</div>
-	</div>
-	
-	<jsp:include page="footer.jsp"></jsp:include>
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>login</title>
+    </head>
+    <body>
+    	
+        <jsp:include page="header.jsp"></jsp:include>
+
+            <div class="container">
+                <div class="account">
+                    <h2 class="account-in">login</h2>
+                    <form action="UsersServlet" method="POST">
+                        <%if(request.getParameter("error")!=null){%>
+                        <div>
+                            <p style="color:red"><%=request.getParameter("error")%></p>
+                        </div> 
+                        <%}%>
+                        <div>
+                            <span>Username *</span>
+                            <input type="text" name="email">
+                        </div> 	
+                         <div> 
+                            <span class="word">Password *</span>
+                            <input type="password" name="pass">
+                        </div>			
+                        <input type="hidden" value="login" name="command">
+                        <input type="submit" value="Login"> 
+                    </form>
+                </div>
+            </div>
+
+        <jsp:include page="footer.jsp"></jsp:include>
+
+
+    </body>
 </html>
