@@ -1,5 +1,7 @@
 <%@page import="model.Category"%>
 <%@page import="dao.CategoryDAO"%>
+<%@page import="beans.Users"%>
+<%@page import="model.Cart"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -58,6 +60,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<%
 		CategoryDAO categoryDAO = new CategoryDAO();	
+		Users users = null;
+    	if (session.getAttribute("user") != null) {
+        users = (Users) session.getAttribute("user");
+    }
+    	Cart cart = (Cart) session.getAttribute("cart");
+    	if(cart == null) {
+    		cart = new  Cart() ;
+    		session.setAttribute("cart", cart);
+    	}
+    	
 	%>
 
 <!--header-->
@@ -70,13 +82,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
+					 <%if(users!=null){%>
+                                <li><a href="wishlist.html"><%=users.getUserEmail()%></a> </li>
+                                <%}%>
 							<li  ><a href="wishlist.html">WISH LIST (0)</a> </li>
 							<li  ><a href="login.jsp">  MY ACCOUNT</a></li>
 							<li ><a href="#" > SHOPPING CART</a></li>
 							<li > <a href="checkout.html" >CHECKOUT</a> </li>	
 							<li><div class="cart">
 									<a href="#" class="cart-in"> </a>
-									<span> 0</span>
+									<span> <%=cart.countItem()%> </span>
 								</div>
 								<ul class="sub-icon1 list">
 						  <h3>Recently added items(2)</h3>
@@ -124,8 +139,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<a class="toggleMenu" href="#">Menu</a>
 				<ul class="nav">
 					<li class="active"><a href="index.jsp"><i> </i>Home</a></li>
-					<li ><a href="#" >Famous brands</a>
-						<ul class="drop">
+		<%-- 			<li ><a href="#" >Famous brands</a>
+						<ul class="drop">--%>
 						<%
 							for(Category c: categoryDAO.getListCategory()){
 						%>
@@ -135,15 +150,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						%>	
 						</ul>
 							
-						</li> 						
-						<li><a href="products.html" >  Hot Trend </a></li>            
+						 						
+			<%-- 			<li><a href="product.jsp?category=" >  Hot Trend </a></li>            
 						<li><a href="products.html" >Bestseller</a></li>						  				 
 						<li><a href="products.html" >Sports</a></li>
 						<li><a href="products.html" >Streets</a></li>
 						<li><a href="products.html" > Works  </a></li>
-						<li><a href="contact.html" >Coming soon </a></li>
+						<li><a href="contact.html" >Coming soon </a></li>--%>
 					
-				</ul>
+				<%-- </ul>--%>
 				<script type="text/javascript" src="js/nav.js"></script>
 			</div>
 		</div>

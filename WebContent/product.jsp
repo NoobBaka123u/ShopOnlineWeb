@@ -1,5 +1,6 @@
 <%@page import="model.Product"%>
 <%@page import="dao.ProductDAO"%>
+<%@page import="model.Cart"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -69,6 +70,12 @@
             if(request.getParameter("category")!=null){
                 category_id = request.getParameter("category");
             }
+            Cart cart = (Cart) session.getAttribute("cart");
+            if(cart == null) {
+            	cart = new Cart ();
+            	session.setAttribute("cart", cart);
+            }
+            
         %>
 
         <jsp:include page="header.jsp"></jsp:include>
