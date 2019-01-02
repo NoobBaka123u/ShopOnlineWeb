@@ -16,27 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `category`
+-- Table structure for table `bill_detail`
 --
 
-DROP TABLE IF EXISTS `category`;
+DROP TABLE IF EXISTS `bill_detail`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `category` (
-  `category_id` int(11) NOT NULL,
-  `category_name` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`category_id`)
+CREATE TABLE `bill_detail` (
+  `billdetail_id` bigint(15) NOT NULL,
+  `bill_id` bigint(15) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  PRIMARY KEY (`billdetail_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `category`
+-- Dumping data for table `bill_detail`
 --
 
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'NIKE'),(2,'ADIDAS'),(3,'VANS'),(4,'CONVERSE'),(5,'REEBOK'),(6,'BALENCIAGA');
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+LOCK TABLES `bill_detail` WRITE;
+/*!40000 ALTER TABLE `bill_detail` DISABLE KEYS */;
+INSERT INTO `bill_detail` VALUES (0,1546357514758,2,1,1);
+/*!40000 ALTER TABLE `bill_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-01 23:16:55
+-- Dump completed on 2019-01-02 16:45:50
