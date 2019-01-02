@@ -1,8 +1,3 @@
-<%-- 
-    Document   : insert_category
-    Created on : 19-May-2016, 7:39:12 PM
-    Author     : TUNGDUONG
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

@@ -1,8 +1,4 @@
-<%-- 
-    Document   : manager_product
-    Created on : 19-May-2016, 7:33:54 PM
-    Author     : TUNGDUONG
---%>
+
 
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>

@@ -15,11 +15,11 @@
 					<div class="content-top-in">
 						<div class="col-md-3 md-col">
 							<div class="col-md">
-								<a href="single.html"><img  src="images/nike_1.jpg" alt="" /></a>	
+								<a href="single.jsp"><img  src="images/nike_1.jpg" alt="" /></a>	
 								<div class="top-content">
-									<h5><a href="single.html">adidas Yeezy Boost</a></h5>
+									<h5><a href="single.jsp">adidas Yeezy Boost</a></h5>
 									<div class="white">
-										<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+										<a href="single.jsp" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>0</span></p>
 										<div class="clearfix"></div>
 									</div>
@@ -29,11 +29,11 @@
 						</div>
 						<div class="col-md-3 md-col">
 							<div class="col-md">
-								<a href="single.html"><img  src="images/adidas_1.jpg" alt="" />	</a>
+								<a href="single.jsp"><img  src="images/adidas_1.jpg" alt="" />	</a>
 								<div class="top-content">
-									<h5><a href="single.html">Politics</a></h5>
+									<h5><a href="single.jsp">Politics</a></h5>
 									<div class="white">
-										<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
+										<a href="single.jsp" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>3</span><span>0</span></p>
 										<div class="clearfix"></div>
 									</div>
@@ -42,11 +42,11 @@
 						</div>
 						<div class="col-md-3 md-col">
 							<div class="col-md">
-								<a href="single.html"><img  src="images/reebok_1.jpg" alt="" /></a>	
+								<a href="single.jsp"><img  src="images/reebok_1.jpg" alt="" /></a>	
 								<div class="top-content">
-									<h5><a href="single.html">Sneaker Hot</a></h5>
+									<h5><a href="single.jsp">Sneaker Hot</a></h5>
 									<div class="white">
-										<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
+										<a href="single.jsp" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>5</span><span>0</span></p>
 										<div class="clearfix"></div>
 									</div>
@@ -55,11 +55,11 @@
 						</div>
 						<div class="col-md-3 md-col">
 							<div class="col-md">
-								<a href="single.html"><img  src="images/balenciaga_1.jpg" alt="" /></a>	
+								<a href="single.jsp"><img  src="images/balenciaga_1.jpg" alt="" /></a>	
 								<div class="top-content">
-									<h5><a href="single.html">Astral</a></h5>
+									<h5><a href="single.jsp">Astral</a></h5>
 									<div class="white">
-										<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
+										<a href="single.jsp" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>4</span><span>5</span></p>
 										<div class="clearfix"></div>
 									</div>
@@ -117,60 +117,60 @@
 					<div class="content-bottom-in">
 					<ul id="flexiselDemo2">			
 						<li><div class="col-md men">
-								<a href="single.html" class="compare-in "><img  src="images/pi4.jpg" alt="" />
+								<a href="single.jsp" class="compare-in "><img  src="images/pi4.jpg" alt="" />
 								<div class="compare in-compare">
 									<span>Add to Compare</span>
 									<span>Add to Whislist</span>
 								</div></a>
 								<div class="top-content bag">
-									<h5><a href="single.html">Symbolic Bag</a></h5>
+									<h5><a href="single.jsp">Symbolic Bag</a></h5>
 									<div class="white">
-										<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
+										<a href="single.jsp" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>4</span><span>0</span></p>
 										<div class="clearfix"></div>
 									</div>
 								</div>							
 							</div></li>
 						<li><div class="col-md men">
-								<a href="single.html" class="compare-in "><img  src="images/pi5.jpg" alt="" />
+								<a href="single.jsp" class="compare-in "><img  src="images/pi5.jpg" alt="" />
 								<div class="compare in-compare">
 									<span>Add to Compare</span>
 									<span>Add to Whislist</span>
 								</div></a>	
 								<div class="top-content bag">
-									<h5><a href="single.html">Interesting Read</a></h5>
+									<h5><a href="single.jsp">Interesting Read</a></h5>
 									<div class="white">
-										<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
+										<a href="single.jsp" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>2</span><span>5</span></p>
 										<div class="clearfix"></div>
 									</div>
 								</div>							
 							</div></li>
 						<li><div class="col-md men">
-								<a href="single.html" class="compare-in "><img  src="images/pi6.jpg" alt="" />
+								<a href="single.jsp" class="compare-in "><img  src="images/pi6.jpg" alt="" />
 								<div class="compare in-compare">
 									<span>Add to Compare</span>
 									<span>Add to Whislist</span>
 								</div></a>	
 								<div class="top-content bag">
-									<h5><a href="single.html">The Carter</a></h5>
+									<h5><a href="single.jsp">The Carter</a></h5>
 									<div class="white">
-										<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
+										<a href="single.jsp" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>1</span><span>0</span></p>
 										<div class="clearfix"></div>
 									</div>
 								</div>							
 							</div></li>
 						<li><div class="col-md men">
-								<a href="single.html" class="compare-in "><img  src="images/pi7.jpg" alt="" />
+								<a href="single.jsp" class="compare-in "><img  src="images/pi7.jpg" alt="" />
 								<div class="compare in-compare">
 									<span>Add to Compare</span>
 									<span>Add to Whislist</span>
 								</div></a>	
 								<div class="top-content bag">
-									<h5><a href="single.html">Onesie</a></h5>
+									<h5><a href="single.jsp">Onesie</a></h5>
 									<div class="white">
-										<a href="single.html" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
+										<a href="single.jsp" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2">ADD TO CART</a>
 										<p class="dollar"><span class="in-dollar">$</span><span>6</span><span>0</span></p>
 										<div class="clearfix"></div>
 									</div>

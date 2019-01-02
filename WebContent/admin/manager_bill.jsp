@@ -1,22 +1,26 @@
-<%-- 
-    Document   : manager_product
-    Created on : 19-May-2016, 7:33:54 PM
-    Author     : TUNGDUONG
---%>
-
+<%@page import="dao.UsersDAO"%>
+<%@page import="beans.Bill"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="dao.BillDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manager Bill</title>
+        <title>Quản lý hóa đơn</title>
 
         <c:set var="root" value="${pageContext.request.contextPath}"/>
         <link href="${root}/css/mos-style.css" rel='stylesheet' type='text/css' />
 
     </head>
     <body>
+        
+        <%
+           BillDAO billDAO = new BillDAO();
+           ArrayList<Bill> listBill = billDAO.getListBill();
+           UsersDAO usersDAO = new UsersDAO();
+        %>
 
         <jsp:include page="header.jsp"></jsp:include>
 
@@ -25,39 +29,35 @@
             <jsp:include page="menu.jsp"></jsp:include>
 
                 <div id="rightContent">
-                    <h3>Tabel</h3>
+                    <h3>Quản lý hóa đơn</h3>
 
-                    <div class="informasi">
-                        ini adalah notifikasi pertanda informasi
-                    </div>
-
-                    <div class="gagal">
-                        ini adalah notifikasi pertanda gagal
-                    </div>
-
-                    <div class="sukses">
-                        ini adalah notifikasi pertanda sukses
-                    </div>
                     <table class="data">
                         <tr class="data">
-                            <th class="data" width="30px">No</th>
-                            <th class="data">Nama</th>
-                            <th class="data">Email</th>
-                            <th class="data">Telepon</th>
-                            <th class="data" width="75px">Pilihan</th>
+                            <th class="data" width="30px">Mã hóa đơn</th>
+                            <th class="data">Khách hàng</th>
+                            <th class="data">Tổng hóa đơn</th>
+                            <th class="data">Thanh toán</th>
+                            <th class="data">Địa chỉ giao hàng</th>
+                            <th class="data">Ngày mua</th>
+                            <th class="data" width="75px">Tùy chọn</th>
                         </tr>
+                        
+                        <%for(Bill bill : listBill){%>
                         <tr class="data">
-                            <td class="data" width="30px">1</td>
-                            <td class="data">Data Anda</td>
-                            <td class="data">Data Anda</td>
-                            <td class="data">Data Anda</td>
+                            <td class="data" width="30px"><%=bill.getBillID()%></td>
+                            <td class="data"><%=usersDAO.getUser(bill.getUserID()).getUserEmail()%></td>
+                            <td class="data"><%=bill.getTotal()%></td>
+                            <td class="data"><%=bill.getPayment()%></td>
+                            <td class="data"><%=bill.getAddress()%></td>
+                            <td class="data"><%=bill.getDate()%></td>
                             <td class="data" width="75px">
-                        <center>
-                            <a href="#"><img src="mos-css/img/oke.png"></a>&nbsp;&nbsp;&nbsp;
-                            <a href="#"><img src="mos-css/img/detail.png"></a>
-                        </center>
-                        </td>
+                                <center>
+                                    <a href="#">Xác nhận </a>&nbsp;&nbsp; | &nbsp;&nbsp;
+                                    <a href="#">Hủy</a>
+                                </center>
+                            </td>
                         </tr>
+                        <%}%>
 
                     </table>
                 </div>
