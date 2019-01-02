@@ -8,7 +8,14 @@ public class Category {
     public Category() {
     }
 
-    public Category(long categoryID, String categoryName) {
+    
+    public Category(String categoryName) {
+		super();
+		this.categoryName = categoryName;
+	}
+
+
+	public Category(long categoryID, String categoryName) {
         this.categoryID = categoryID;
         this.categoryName = categoryName;
     }

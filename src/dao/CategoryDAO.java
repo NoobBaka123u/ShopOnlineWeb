@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,11 +30,45 @@ public class CategoryDAO {
         }
         return list;
     }
-	public void main(String[] args) {
-		CategoryDAO dao = new CategoryDAO();
-		for (Category ds: dao.getListCategory()) {
-			System.out.println(ds.getCategoryID()+" "+ds.getCategoryName());
+	public boolean insert(Category c) throws SQLException {
+	    try {
+	         Connection connection = DBConnection.getDatabaseConnection();
+	         String sql = "insert into category (category_name) values(?)";
+	         PreparedStatement statement = connection.prepareStatement(sql);
+	       //  statement.setLong(1, c.getCategoryID());
+	         statement.setString(1, c.getCategoryName());
+	         int temp = statement.executeUpdate();
+	         if(temp==0)return false;
+	         else return true;
+	    } catch (Exception e) {
+	        System.out.println(e.getMessage()+"loi");
+	    	return false;
+	    }
 		}
+	public boolean update(Category c) throws SQLException {
+	    try {
+	         Connection connection = DBConnection.getDatabaseConnection();
+	         String sql = "UPDATE category SET category_name = ? WHERE category_id = ?";
+	         PreparedStatement ps = connection.prepareCall(sql);
+	         ps.setString(1, c.getCategoryName());
+	         ps.setLong(2, c.getCategoryID());
+	         int temp = ps.executeUpdate();
+	         return temp == 1;
+	    } catch (Exception e) {
+	         return false;
+	    }
+	}
+	public boolean delete(long category_id) throws SQLException {
+	    try {
+	        Connection connection = DBConnection.getDatabaseConnection();
+	        String sql = "DELETE FROM category WHERE category_id = ?";
+	        PreparedStatement ps = connection.prepareCall(sql);
+	        ps.setLong(1, category_id);
+	        int temp = ps.executeUpdate();
+	            return temp == 1;
+	    } catch (Exception e) {
+	        return false;
+	    }
 	}
 
 }

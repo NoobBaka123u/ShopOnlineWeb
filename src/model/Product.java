@@ -12,7 +12,19 @@ public class Product {
     public Product() {
     }
 
-    public Product(long productID, long categoryID, String productName, String productImage, double productPrice, String productDescription) {
+    
+    public Product(long categoryID, String productName, String productImage, double productPrice,
+			String productDescription) {
+		super();
+		this.categoryID = categoryID;
+		this.productName = productName;
+		this.productImage = productImage;
+		this.productPrice = productPrice;
+		this.productDescription = productDescription;
+	}
+
+
+	public Product(long productID, long categoryID, String productName, String productImage, double productPrice, String productDescription) {
         this.productID = productID;
         this.categoryID = categoryID;
         this.productName = productName;
