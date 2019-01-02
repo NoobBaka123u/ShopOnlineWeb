@@ -21,12 +21,13 @@ public class ManagerCategoryServlet extends HttpServlet {
 	        response.setCharacterEncoding("utf-8");
 	        String command = request.getParameter("command");
 	        String category_id = request.getParameter("category_id");
-	        String tenDanhMuc = request.getParameter("tenDanhMuc");
+	        
 	        String url = "";
 	        try {
 	            switch (command) {
 
 	            case "update":
+	            	String tenDanhMuc = request.getParameter("tenDanhMuc");
                     categoryDAO.update(new Category(Long.parseLong(request.getParameter("category_id")),
                            tenDanhMuc));
                     url = "/admin/manager_category.jsp";

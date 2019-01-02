@@ -23,17 +23,23 @@ public class ManagerProductServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         String command = request.getParameter("command");
-        String product_id = request.getParameter("category_id");
-        String tensp = request.getParameter("tensp");
-        String hinhAnh = request.getParameter("hinhAnh");
-        String gia = request.getParameter("gia");
-        String moTa = request.getParameter("moTa");
-        String iddanhmuc=request.getParameter("IDDanhMuc");
+        String product_id = request.getParameter("product_id");
+        
         String url = "";
         try {
             switch (command) {
 
             case "update":
+            	String tensp = request.getParameter("tensp");
+                String hinhAnh = request.getParameter("hinhAnh");
+                String gia = request.getParameter("gia");
+                String moTa = request.getParameter("moTa");
+                String iddanhmuc=request.getParameter("IDDanhMuc");
+                if (tensp.equals("")||hinhAnh.equals("")||gia.equals("")||moTa.equals("")||iddanhmuc.equals("")) 
+                {
+                	url = "/admin/update_product.jsp";
+                	 break;
+                }
                 dao.update(new Product(Long.parseLong(product_id),Long.parseLong(iddanhmuc), tensp, hinhAnh, Double.parseDouble(gia), moTa));
                 url = "/admin/manager_product.jsp";
                 break;
@@ -43,10 +49,11 @@ public class ManagerProductServlet extends HttpServlet {
                     break;
             }
         } catch (Exception e) {
-        	System.out.println(e);
+        	System.out.println(e.toString());
         }
-        RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
-        rd.forward(request, response);
+        request.getRequestDispatcher(url).forward(request, response);
+        
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -82,6 +89,7 @@ public class ManagerProductServlet extends HttpServlet {
         }
         RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
         rd.forward(request, response);
+		
 	}
 
 }
