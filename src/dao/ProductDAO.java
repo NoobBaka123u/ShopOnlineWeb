@@ -1,7 +1,7 @@
 package dao;
 
+import  dao.DBConnection;
 import java.sql.Connection;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +16,7 @@ public class ProductDAO {
 	public ArrayList<Product> getListProductByCategory(long category_id) throws SQLException {
         Connection connection = DBConnection.getDatabaseConnection();
         String sql = "SELECT * FROM product WHERE category_id = '" + category_id + "'";
-        PreparedStatement ps = connection.prepareStatement(sql);
+        PreparedStatement ps = connection.prepareCall(sql);
         ResultSet rs = ps.executeQuery();
         ArrayList<Product> list = new ArrayList<>();
         while (rs.next()) {
@@ -31,34 +31,27 @@ public class ProductDAO {
         return list;
     }
 
-	public Product getProduct(long parseLong) {
-		Connection connection = DBConnection.getDatabaseConnection();
-        String sql = "SELECT * FROM product WHERE product_id = '" + parseLong + "'";
-        Product p = null;
-        try {
-			Statement statement = connection.createStatement();
-			ResultSet set =statement.executeQuery(sql);
-			while(set.next())
-			{
-				p = new Product();
-				p.setProductID(set.getLong("product_id"));
-				p.setCategoryID(set.getLong("category_id"));
-				p.setProductDescription(set.getString("product_description"));
-				p.setProductImage(set.getString("product_image"));
-				p.setProductName(set.getString("product_name"));
-				p.setProductPrice(set.getDouble("product_price"));
-				
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        return p;
-	}
-	public ArrayList<Product> getListProduct() throws SQLException {
+	public Product getProduct(long productID) throws SQLException {
         Connection connection = DBConnection.getDatabaseConnection();
-        String sql = "SELECT * FROM product";
-        PreparedStatement ps = connection.prepareStatement(sql);
+        String sql = "SELECT * FROM product WHERE product_id = '" + productID + "'";
+        PreparedStatement ps = connection.prepareCall(sql);
+        ResultSet rs = ps.executeQuery();
+        Product product = new Product();
+        while (rs.next()) {
+            product.setProductID(rs.getLong("product_id"));
+            product.setProductName(rs.getString("product_name"));
+            product.setProductImage(rs.getString("product_image"));
+            product.setProductPrice(rs.getDouble("product_price"));
+            product.setProductDescription(rs.getString("product_description"));
+        }
+        return product;
+    }
+	public ArrayList<Product> getListProductByNav(long categoryID, int firstResult, int maxResult) throws SQLException{
+        Connection connection = DBConnection.getDatabaseConnection();
+        String sql = "SELECT * FROM product WHERE category_id = '" + categoryID + "' limit ?,?";
+        PreparedStatement ps = connection.prepareCall(sql);
+        ps.setInt(1, firstResult);
+        ps.setInt(2, maxResult);
         ResultSet rs = ps.executeQuery();
         ArrayList<Product> list = new ArrayList<>();
         while (rs.next()) {
@@ -68,11 +61,22 @@ public class ProductDAO {
             product.setProductImage(rs.getString("product_image"));
             product.setProductPrice(rs.getDouble("product_price"));
             product.setProductDescription(rs.getString("product_description"));
-            product.setCategoryID(rs.getLong("category_id"));
             list.add(product);
         }
         return list;
     }
+    
+	 public int countProductByCategory(long categoryID) throws SQLException{
+	        Connection connection = DBConnection.getDatabaseConnection();
+	        String sql = "SELECT count(product_id) FROM product WHERE category_id = '" + categoryID + "'";
+	        PreparedStatement ps = connection.prepareCall(sql);
+	        ResultSet rs = ps.executeQuery();
+	        int count = 0;
+	        while (rs.next()) {
+	            count = rs.getInt(1);
+	        }
+	        return count;  
+	    }
 	public boolean insert(Product p) throws SQLException {
 	    try {
 	         Connection connection = DBConnection.getDatabaseConnection();
@@ -129,4 +133,14 @@ public class ProductDAO {
 	        return false;
 	    }
 	}
+	public static void main(String[] args) throws SQLException {
+        ProductDAO dao = new ProductDAO();
+//        for (Product p : dao.getListProductByCategory(3)) {
+//            System.out.println(p.getProductID() + " - " + p.getProductName());
+//        }
+        System.out.println(dao.countProductByCategory(1));
+    }
+    
 }
+
+
