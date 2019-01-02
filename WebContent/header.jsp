@@ -80,14 +80,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">	
 			<div class="header-top-in">			
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=" " ></a>
+					<a href="index.jsp"><img src="images/logo.png" alt=" " ></a>
 				</div>
 				<div class="header-in">
 					<ul class="icon1 sub-icon1">
 					 <%if(users!=null){%>
-                                <li><a href="wishlist.html"><%=users.getUserEmail()%></a> </li>
+                                <li><a href="wishlist.jsp"><%=users.getUserEmail()%></a> </li>
                                 <%}%>
-							<li  ><a href="wishlist.html">WISH LIST (0)</a> </li>
+							<li  ><a href="#">WISH LIST (0)</a> </li>
 							<li  ><a href="login.jsp">  MY ACCOUNT</a></li>
 							<li ><a href="#" > SHOPPING CART</a></li>
 							<li > <a href="checkout.jsp" >CHECKOUT</a> </li>	

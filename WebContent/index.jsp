@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -66,6 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<jsp:include page="banner.jsp"></jsp:include>
 	
 	<jsp:include page="content.jsp"></jsp:include>
+	
 	
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>

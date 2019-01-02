@@ -12,6 +12,7 @@ import model.Category;
 import model.Product;
 
 public class ProductDAO {
+	
 
 	public ArrayList<Product> getListProductByCategory(long category_id) throws SQLException {
         Connection connection = DBConnection.getDatabaseConnection();
@@ -77,6 +78,7 @@ public class ProductDAO {
 	        }
 	        return count;  
 	    }
+	 
 	public boolean insert(Product p) throws SQLException {
 	    try {
 	         Connection connection = DBConnection.getDatabaseConnection();
