@@ -179,8 +179,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</select>
 					 </div>
 					<div class="search">
-						<form>
-							<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+						<form method="get" action="SearchServlet">
+							<input type="text" name="search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
 							<input type="submit" value="">
 						</form>
 					</div>
