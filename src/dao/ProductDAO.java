@@ -77,6 +77,24 @@ public class ProductDAO {
 	        }
 	        return count;  
 	    }
+	 public ArrayList<Product> getListProduct() throws SQLException {
+	        Connection connection = DBConnection.getDatabaseConnection();
+	        String sql = "SELECT * FROM product";
+	        PreparedStatement ps = connection.prepareCall(sql);
+	        ResultSet rs = ps.executeQuery();
+	        ArrayList<Product> list = new ArrayList<>();
+	        while (rs.next()) {
+	            Product product = new Product();
+	            product.setProductID(rs.getLong("product_id"));
+	            product.setProductName(rs.getString("product_name"));
+	            product.setProductImage(rs.getString("product_image"));
+	            product.setProductPrice(rs.getDouble("product_price"));
+	            product.setProductDescription(rs.getString("product_description"));
+	            product.setCategoryID(rs.getLong("category_id"));
+	            list.add(product);
+	        }
+	        return list;
+	    }
 	public boolean insert(Product p) throws SQLException {
 	    try {
 	         Connection connection = DBConnection.getDatabaseConnection();

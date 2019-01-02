@@ -40,14 +40,22 @@
                         <tr>
                             <td style="float: right"><b>Tên san pham:</b></td>
                             <td><input type="text" class="sedang" name="tensp"></td>
-                            <td style="float: right"><b>Hinh anh:</b></td>
+                            </tr>
+                         <tr>   <td style="float: right"><b>Hinh anh:</b></td>
                             <td><input type="text" class="sedang" name="hinhAnh"></td>
+                            </tr>
+                            <tr>
                             <td style="float: right"><b>Gia:</b></td>
                             <td><input type="text" class="sedang" name="gia"></td>
+                            </tr>
+                            <tr>
                             <td style="float: right"><b>Mo ta:</b></td>
                             <td><input type="text" class="sedang" name="moTa"></td>
+                            </tr>
+                            <tr>
                             <td style="float: right"><b>ID danh muc:</b></td>
                             <td><input type="text" class="sedang" name="IDDanhMuc"></td>
+                            
                         </tr>
                         <tr><td></td><td>
                                 <input type="hidden" name="command" value="insert">

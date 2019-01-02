@@ -57,7 +57,7 @@ ArrayList<Product> listProduct = dao.getListProduct();
                             <td class="data"><%=product.getProductID() %></td>
                             <td class="data"><%=product.getProductName() %></td>
                             <td class="data"><%=product.getCategoryID() %></td>
-                            <td class="data"><img src="<%=product.getProductImage()%>"></td>
+                            <td class="data"><img height="50" width="50" src="<%=product.getProductImage()%>"></td>
                             <td class="data"><%=product.getProductPrice() %></td>
                             <td class="data"><%=product.getProductDescription() %></td>
                             
