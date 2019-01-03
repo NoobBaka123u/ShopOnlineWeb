@@ -16,30 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `bill_detail`
+-- Table structure for table `bill`
 --
 
-DROP TABLE IF EXISTS `bill_detail`;
+DROP TABLE IF EXISTS `bill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `bill_detail` (
-  `billdetail_id` bigint(15) NOT NULL,
-  `bill_id` bigint(15) DEFAULT NULL,
-  `product_id` int(11) DEFAULT NULL,
-  `price` double DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL,
-  PRIMARY KEY (`billdetail_id`)
+CREATE TABLE `bill` (
+  `bill_id` bigint(15) NOT NULL,
+  `user_id` bigint(15) DEFAULT NULL,
+  `total` double DEFAULT NULL,
+  `payment` varchar(45) DEFAULT NULL,
+  `address` longtext,
+  `date` timestamp(4) NULL DEFAULT NULL,
+  PRIMARY KEY (`bill_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `bill_detail`
+-- Dumping data for table `bill`
 --
 
-LOCK TABLES `bill_detail` WRITE;
-/*!40000 ALTER TABLE `bill_detail` DISABLE KEYS */;
-INSERT INTO `bill_detail` VALUES (0,1546357514758,2,1,1);
-/*!40000 ALTER TABLE `bill_detail` ENABLE KEYS */;
+LOCK TABLES `bill` WRITE;
+/*!40000 ALTER TABLE `bill` DISABLE KEYS */;
+INSERT INTO `bill` VALUES (1546357514758,2,1,'Bank transfer','da nang','2019-01-01 15:45:14.7620');
+/*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-02 16:45:50
+-- Dump completed on 2019-01-03 18:11:18
