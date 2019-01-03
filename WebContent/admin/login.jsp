@@ -1,8 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : 19-May-2016, 7:37:51 PM
-    Author     : TUNGDUONG
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -27,11 +22,11 @@
             Login Administrator
         </div>
         <div class="fieldLogin">
-            <form method="POST" action="">
+            <form method="POST" action="/ShopOnline/AdminLogin">
                 <label>Username</label><br>
-                <input type="text" class="login"><br>
+                <input type="text" name="adminname" class="login"><br>
                 <label>Password</label><br>
-                <input type="password" class="login"><br>
+                <input type="password" name="password" class="login"><br>
                 <input type="submit" class="button" value="Login">
             </form>
         </div>

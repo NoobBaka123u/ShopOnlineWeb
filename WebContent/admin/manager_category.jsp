@@ -1,8 +1,4 @@
-<%-- 
-    Document   : manager_category
-    Created on : 19-May-2016, 7:30:15 PM
-    Author     : TUNGDUONG
---%>
+
 
 <%@page import="model.Category"%>
 <%@page import="java.util.ArrayList"%>

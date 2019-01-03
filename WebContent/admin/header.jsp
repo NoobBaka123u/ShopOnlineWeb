@@ -1,8 +1,4 @@
-<%-- 
-    Document   : header
-    Created on : 19-May-2016, 7:18:44 PM
-    Author     : TUNGDUONG
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,13 +10,7 @@
     <body>
 
         <div id="header">
-            <div class="inHeader">
-                <div class="mosAdmin">
-                    Hallo, Mas Administrator<br>
-                    <a href="">Lihat website</a> | <a href="">Help</a> | <a href="login.html">Keluar</a>
-                </div>
-                <div class="clear"></div>
-            </div>
+           
         </div> 
 
     </body>

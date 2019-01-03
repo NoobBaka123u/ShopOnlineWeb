@@ -1,8 +1,4 @@
-<%-- 
-    Document   : menu
-    Created on : 19-May-2016, 7:20:57 PM
-    Author     : TUNGDUONG
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
