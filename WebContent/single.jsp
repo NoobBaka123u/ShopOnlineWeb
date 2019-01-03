@@ -1,4 +1,4 @@
-
+<%@page import="model.Cart"%>
 <%@page import="model.Product"%>
 <%@page import="dao.ProductDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -72,6 +72,11 @@
                 productID = request.getParameter("productID");
                 product = productDAO.getProduct(Long.parseLong(productID));
             }
+            Cart cart = (Cart) session.getAttribute("cart");
+            if (cart == null) {
+                cart = new Cart();
+                session.setAttribute("cart", cart);
+            }
         %>
 
         <jsp:include page="header.jsp"></jsp:include>
@@ -91,7 +96,8 @@
                             <h4><%=product.getProductName()%></h4>
                             <div class="para-grid">
                                 <span class="add-to">$<%=product.getProductPrice()%></span>
-                                <a href="#" class="hvr-shutter-in-vertical cart-to">Add to Cart</a>					
+                                 <a href="CartServlet?command=plus&productID=<%=product.getProductID()%>" class="hvr-shutter-in-vertical hvr-shutter-in-vertical2 ">ADD TO CART</a>
+                             <%--   <a href="#" class="hvr-shutter-in-vertical cart-to">Add to Cart</a>			--%> 		
                                 <div class="clearfix"></div>
                             </div>
                             <h5>100 items in stock</h5>
